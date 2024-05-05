@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+html,
+body {
+  background: #f9f8f5;
+  color: #0d0d0d;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+section {
+  /* border-top: 2px solid #507197; */
+  margin: 1rem auto 4rem;
+  max-width: 40rem;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-family: Besley, Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-family: Besley, Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 1.4rem;
+}
+
+a {
+  color: #F2AB22;
+}
+
+chapter {
+  display: block;
+  counter-reset: verses;
+}
+
+chapter::before {
+  bottom: 0.2em;
+  content: attr(value);
+  float: left;
+  font-family: Besley;
+  font-size: 1.6em;
+  font-weight: 900;
+  margin-right: 0.5rem;
+  opacity: 0.85;
+  position: relative;
+}
+
+verse {
+  counter-increment: verses;
+  display: inline;
+}
+
+verse[value] {
+  counter-set: verses attr(value);
+}
+
+verse::before {
+  bottom: 0.2em;
+  content: counter(verses) " ";
+  font-family: Besley;
+  font-size: 0.8em;
+  font-weight: 700;
+  opacity: 0.67;
+  position: relative;
+}
+
+verse.first::before {
+  display: none;
+}

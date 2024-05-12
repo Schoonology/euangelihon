@@ -2,14 +2,19 @@
 
 html,
 body {
-  background: #f9f8f5;
   color: #0d0d0d;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 16px;
   font-weight: 400;
-  height: 100%;
   margin: 0;
+  overflow: auto;
   padding: 0;
+}
+
+html,
+body {
+  background: #f9f8f5;
+  height: 100%;
   width: 100%;
 }
 
@@ -30,20 +35,23 @@ img {
 }
 
 header,
-section {
-  margin: 1rem auto;
+section,
+footer {
+  margin: 3rem auto;
   max-width: 40rem;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 h1 {
   font-family: Besley, Georgia, 'Times New Roman', Times, serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 900;
   opacity: 0.85;
+  text-align: center;
 }
 
 h2 {
+  color: #001442;
   font-family: Besley, Georgia, 'Times New Roman', Times, serif;
   font-size: 1.25rem;
   font-weight: 700;
@@ -52,7 +60,13 @@ h2 {
 }
 
 h2.subtitle {
-  margin-top: -1rem;
+  color: #001442;
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+  margin-top: -2rem;
+  opacity: 0.67;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 p {
@@ -61,8 +75,12 @@ p {
   margin-bottom: 1.4rem;
 }
 
+li {
+  line-height: 1.4;
+}
+
 a {
-  color: #F2AB22;
+  color: #0038ba;
 }
 
 ol.chapter {
@@ -73,6 +91,7 @@ ol.chapter {
 
 ol.chapter::before {
   bottom: 0.2em;
+  color: #001442;
   content: attr(value);
   float: left;
   font-family: Besley;
@@ -90,14 +109,88 @@ li.verse {
 
 li.verse::before {
   bottom: 0.2em;
-  content: counter(list-item) " ";
+  color: #001442;
+  content: counter(list-item);
   font-family: Besley;
   font-size: 0.8em;
   font-weight: 700;
-  opacity: 0.67;
+  margin-right: 0.2em;
+  opacity: 0.85;
   position: relative;
 }
 
 li.verse.first::before {
   display: none;
+}
+
+h2>.volunteer {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+h2>.volunteer {
+  display: block;
+}
+
+h2>.volunteer::before {
+  content: "•";
+  margin-right: 0.5em;
+}
+
+.lyrics {
+  list-style: none;
+  margin: 1rem 0 0;
+  border-left: 0.25rem solid #00144253;
+  padding: 0.5rem 1rem;
+}
+
+.lyrics>h3 {
+  color: #001442;
+  font-family: Besley, Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.85;
+}
+
+.lyrics>h4 {
+  color: #001442;
+  font-family: Besley, Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0.75em 0 0;
+  opacity: 0.85;
+}
+
+.lyrics>.instructions {
+  font-family: Besley, Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+}
+
+blockquote.recitation {
+  border-left: 0.25rem solid #00144253;
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+/* Tablet, desktop styles */
+@media screen and (min-width: 720px) {
+  .lyrics {
+    padding: 0 2rem;
+  }
+
+  h2 {
+    align-items: baseline;
+    display: flex;
+  }
+
+  h2>.dots {
+    border-bottom: 3px dotted #001442;
+    flex: 1;
+  }
+
+  h2>.volunteer::before {
+    display: none;
+  }
 }

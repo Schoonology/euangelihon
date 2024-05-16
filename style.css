@@ -69,6 +69,15 @@ h2.subtitle {
   text-transform: uppercase;
 }
 
+h5 {
+  color: #001442;
+  font-family: Besley, Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.85;
+}
+
 p {
   font-size: 1rem;
   line-height: 1.4;
@@ -123,16 +132,15 @@ li.verse.first::before {
   display: none;
 }
 
-h2>.volunteer {
+h2>.volunteer,
+h5>.volunteer {
+  display: block;
   font-size: 1rem;
   font-weight: normal;
 }
 
-h2>.volunteer {
-  display: block;
-}
-
-h2>.volunteer::before {
+h2>.volunteer::before,
+h5>.volunteer::before {
   content: "•";
   margin-right: 0.5em;
 }
@@ -180,17 +188,20 @@ blockquote.recitation {
     padding: 0 2rem;
   }
 
-  h2 {
+  h2,
+  h5 {
     align-items: baseline;
     display: flex;
   }
 
-  h2>.dots {
+  h2>.dots,
+  h5>.dots {
     border-bottom: 3px dotted #001442;
     flex: 1;
   }
 
-  h2>.volunteer::before {
+  h2>.volunteer::before,
+  h5>.volunteer::before {
     display: none;
   }
 }

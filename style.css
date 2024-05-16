@@ -194,6 +194,10 @@ blockquote.recitation {
     display: flex;
   }
 
+  h2.subtitle {
+    display: block;
+  }
+
   h2>.dots,
   h5>.dots {
     border-bottom: 3px dotted #001442;
